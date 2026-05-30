@@ -6,6 +6,7 @@
 #
 
 LOCAL_PATH := device/oplus/ossi
+
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -21,11 +22,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     bootctrl.common
 
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.common \
-    libgptutils \
-    libz \
-    libcutils
+# Boot control HAL - shared library version for recovery (replaces obsolete PRODUCT_STATIC_BOOT_CONTROL_HAL)
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.0-impl.recovery \
+    bootctrl.common.recovery
 
 PRODUCT_PACKAGES += \
     otapreopt_script \
