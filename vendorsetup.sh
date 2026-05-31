@@ -1,0 +1,3 @@
+add_lunch_combo omni_ossi-user
+add_lunch_combo omni_ossi-userdebug
+add_lunch_combo omni_ossi-eng
